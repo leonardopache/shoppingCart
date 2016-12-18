@@ -3,4 +3,5 @@ target
 !.settings/.jsdtscope
 .project
 .classpath
+.DS_Store
 /build/
