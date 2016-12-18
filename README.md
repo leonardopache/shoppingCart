@@ -1,2 +1,2 @@
 # shoppingCart
-Implementação de um carrinho com serviços REST
+Implementação de um carrinho com serviços REST!
