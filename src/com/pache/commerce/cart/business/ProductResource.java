@@ -22,9 +22,8 @@ import com.pache.commerce.cart.entity.Product;
 import com.pache.commerce.cart.entity.ShoppingCart;
 
 /**
- * Rest Resource 
+ * Rest Resource that provides access to business implementation and repository across the HTTP protocol
  * @author lpache
- *
  */
 @Path("rest")
 @Consumes(MediaType.APPLICATION_JSON)

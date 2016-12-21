@@ -1,15 +1,17 @@
 package com.pache.commerce.cart.business.startup;
 
-import java.math.BigDecimal;
-
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.ejb.Singleton;
 import javax.ejb.Startup;
 
-import com.pache.commerce.cart.entity.Product;
 import com.pache.commerce.cart.model.ProductDAO;
 
+/**
+ * Service executed while app startup to insert some data.
+ * 
+ * @author lpache
+ */
 @Startup
 @Singleton
 public class StartUpService {
@@ -19,27 +21,11 @@ public class StartUpService {
 	
 	@PostConstruct
 	public void init(){
-		System.out.println("EJB Iniciando..... ");
-		Product product1 = new Product();
-		product1.setId("1");
-		product1.setImage("");
-		product1.setName("Video Game PS4");
-		product1.setPrice(new BigDecimal(450));
-		productDAO.insert(product1);
-		
-		Product product2 = new Product();
-		product2.setId("2");
-		product2.setImage("");
-		product2.setName("Table Dell Venue 8");
-		product2.setPrice(new BigDecimal(350));
-		productDAO.insert(product2);
-		
-		Product product3 = new Product();
-		product3.setId("3");
-		product3.setImage("");
-		product3.setName("Iphone 6S");
-		product3.setPrice(new BigDecimal(950));
-		productDAO.insert(product3);
-		System.out.println(productDAO.getAll());
+		StringBuffer strSQL = new StringBuffer();
+		strSQL.append("insert into Product (id, name, image, price) values (1, 'Video Game PS4', '', 450);");
+		strSQL.append("insert into Product (id, name, image, price) values (2, 'Table Dell Venue 8', '', 350);");
+		strSQL.append("insert into Product (id, name, image, price) values (3, 'Iphone 6S', '', 950);");
+		strSQL.append("insert into Product (id, name, image, price) values (4, 'TV LG', '', 1400);");
+		productDAO.executeSQL(strSQL.toString());
 	}
 }

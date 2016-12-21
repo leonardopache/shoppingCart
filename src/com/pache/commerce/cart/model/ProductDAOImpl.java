@@ -21,6 +21,7 @@ public class ProductDAOImpl implements ProductDAO{
 	@PersistenceContext
 	private EntityManager em;
 
+	@SuppressWarnings("unchecked")
 	public List<Product> getAll(){
 		return em.createQuery("FROM Product").getResultList();
 	}
@@ -28,6 +29,12 @@ public class ProductDAOImpl implements ProductDAO{
 	@Override
 	public void insert(Product product) {
 		em.persist(product);
+		em.flush();
+	}
+
+	@Override
+	public void executeSQL(String strSQL) {
+		em.createNativeQuery(strSQL).executeUpdate();
 		em.flush();
 	}
 }

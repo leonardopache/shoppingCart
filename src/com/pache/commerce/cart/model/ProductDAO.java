@@ -13,6 +13,6 @@ import com.pache.commerce.cart.entity.Product;
 public interface ProductDAO {
 
 	public List<Product> getAll();
-
 	public void insert(Product product);
+	public void executeSQL(String strSQL);
 }

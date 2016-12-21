@@ -12,8 +12,8 @@ import com.pache.commerce.cart.entity.Product;
 import com.pache.commerce.cart.model.ProductDAO;
 
 /**
+ * Implementation of {@link ProductService}
  * @author lpache
- *
  */
 @Stateless
 public class ProductServicesImpl implements ProductService{

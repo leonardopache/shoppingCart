@@ -12,8 +12,8 @@ import com.pache.commerce.cart.entity.CommerceItem;
 import com.pache.commerce.cart.entity.ShoppingCart;
 
 /**
+ * Implementation of {@link ShoppingCartService}
  * @author lpache
- *
  */
 @Stateful
 public class ShoppingCartServiceImpl implements ShoppingCartService{
